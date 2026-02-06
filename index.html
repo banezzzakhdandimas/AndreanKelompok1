@@ -3,27 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CV Zeus Olympian - Animated Edition</title>
+    <title>CV Zeus - Moh Andrean Nugraha</title>
     <style>
         :root {
             --zeus-gold: #ffd700;
             --zeus-blue: #1a2a6c;
             --zeus-dark: #0f0c29;
             --white: #ffffff;
-            --thunder-glow: rgba(255, 215, 0, 0.6);
+            --glow: rgba(255, 215, 0, 0.5);
         }
 
-        /* Keyframes Animasi */
         @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
+            from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
-        }
-
-        @keyframes thunderFlash {
-            0%, 90%, 100% { opacity: 0.3; }
-            92% { opacity: 1; text-shadow: 0 0 20px white; }
-            95% { opacity: 0.5; }
-            97% { opacity: 1; }
         }
 
         @keyframes float {
@@ -31,173 +23,165 @@
             50% { transform: translateY(-10px); }
         }
 
-        @keyframes borderGlow {
-            0%, 100% { box-shadow: 0 0 15px var(--zeus-gold); }
-            50% { box-shadow: 0 0 30px var(--zeus-gold), 0 0 50px white; }
+        @keyframes thunder {
+            0%, 95%, 100% { opacity: 0.1; }
+            97% { opacity: 1; text-shadow: 0 0 20px #fff; }
         }
 
         body {
-            font-family: 'Georgia', serif;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             color: var(--white);
             margin: 0;
             padding: 20px;
             display: flex;
             justify-content: center;
-            overflow-x: hidden;
         }
 
-        .cv-card {
+        .cv-container {
             max-width: 850px;
-            background: rgba(255, 255, 255, 0.07);
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             border: 2px solid var(--zeus-gold);
-            border-radius: 15px;
+            border-radius: 20px;
             padding: 40px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-            animation: fadeIn 1.2s ease-out;
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
+            animation: fadeIn 1s ease-out;
             position: relative;
         }
 
-        /* Icon Petir Animasi */
-        .thunder-icon {
+        .thunder-bg {
             position: absolute;
             top: 20px;
-            right: 30px;
-            font-size: 4rem;
+            right: 40px;
+            font-size: 5rem;
             color: var(--zeus-gold);
-            animation: thunderFlash 4s infinite;
+            animation: thunder 3s infinite;
+            pointer-events: none;
         }
 
         header {
             text-align: center;
-            border-bottom: 1px solid var(--zeus-gold);
+            border-bottom: 2px solid var(--zeus-gold);
             padding-bottom: 20px;
+            margin-bottom: 30px;
         }
 
         .profile-img {
-            width: 160px;
-            height: 160px;
+            width: 150px;
+            height: 150px;
             border-radius: 50%;
             border: 4px solid var(--zeus-gold);
-            object-fit: cover;
             margin-bottom: 15px;
-            animation: float 4s ease-in-out infinite, borderGlow 3s infinite;
+            animation: float 4s ease-in-out infinite;
+            box-shadow: 0 0 20px var(--glow);
+            object-fit: cover;
         }
 
-        h1 {
-            color: var(--zeus-gold);
-            text-transform: uppercase;
-            letter-spacing: 5px;
-            margin: 10px 0;
-            text-shadow: 0 0 10px rgba(255, 215, 0, 0.5);
-        }
+        h1 { margin: 0; letter-spacing: 3px; color: var(--zeus-gold); text-transform: uppercase; }
+        .subtitle { font-style: italic; color: #ccc; margin-top: 5px; }
 
-        .section { 
-            margin: 30px 0;
-            animation: fadeIn 1.5s ease-out;
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
         h2 {
             color: var(--zeus-gold);
-            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            transition: 0.3s;
+            border-left: 4px solid var(--zeus-gold);
+            padding-left: 10px;
+            font-size: 1.2em;
+            text-transform: uppercase;
         }
 
-        h2:hover {
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px var(--zeus-gold);
-        }
+        .info-list { list-style: none; padding: 0; }
+        .info-list li { margin-bottom: 10px; display: flex; align-items: center; gap: 10px; }
 
-        .experience-item {
-            margin-bottom: 20px;
-            padding-left: 15px;
-            border-left: 2px solid var(--zeus-gold);
-            transition: 0.3s;
-        }
-
-        .experience-item:hover {
-            background: rgba(255, 215, 0, 0.05);
-            transform: translateX(10px);
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        .skill-tag {
+        .skill-badge {
+            display: inline-block;
             background: rgba(255, 215, 0, 0.1);
             border: 1px solid var(--zeus-gold);
-            padding: 8px 18px;
-            border-radius: 25px;
-            cursor: pointer;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 5px 12px;
+            border-radius: 15px;
+            margin: 5px 2px;
+            font-size: 0.85em;
+            transition: 0.3s;
         }
 
-        .skill-tag:hover {
+        .skill-badge:hover {
             background: var(--zeus-gold);
             color: var(--zeus-dark);
-            transform: scale(1.1) rotate(3deg);
-            box-shadow: 0 0 20px var(--zeus-gold);
+            transform: scale(1.1);
         }
 
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            font-style: italic;
-            opacity: 0.7;
+        .social-link {
+            color: var(--white);
+            text-decoration: none;
+            border-bottom: 1px dashed var(--zeus-gold);
+        }
+
+        .social-link:hover { color: var(--zeus-gold); }
+
+        @media (max-width: 600px) {
+            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
-<div class="cv-card">
-    <div class="thunder-icon">⚡</div>
+<div class="cv-container">
+    <div class="thunder-bg">⚡</div>
     
     <header>
-        <img src="https://via.placeholder.com/160" alt="Zeus Photo" class="profile-img">
-        <h1>ZEUS OLYMPIAN</h1>
-        <p>CEO of the Universe | Master of Thunder</p>
+        <img src="https://via.placeholder.com/150" alt="Foto Andrean" class="profile-img">
+        <h1>MOH ANDREAN NUGRAHA</h1>
+        <div class="subtitle">The Hidden Heir & World Conqueror</div>
+        <p>Lahir: 19 Januari 2008 | Alamat: Kp.Lamajang Peuntas</p>
     </header>
 
     <div class="section">
-        <h2>⚡ Divine Summary</h2>
-        <p>Penguasa langit yang memiliki kemampuan skalabilitas tak terbatas. Berpengalaman dalam memimpin organisasi skala kosmik dan memastikan uptime 99.9% bagi seluruh umat manusia.</p>
+        <h2>⚡ Tentang Diri</h2>
+        <p>Saya adalah anak CEO yang disembunyikan oleh dunia. Memiliki ambisi besar untuk menguasai dunia sambil menikmati hobi berolahraga dan menguji keberuntungan di dunia gacha.</p>
     </div>
 
-    <div class="section">
-        <h2>⚡ Legendary Experience</h2>
-        <div class="experience-item">
-            <strong>The Great King - Olympus Corp</strong>
-            <div>0 BC - Present</div>
-            <p>Bertanggung jawab atas kedaulatan 12 Dewa dan menjaga kestabilan alam semesta.</p>
+    <div class="grid">
+        <div class="col">
+            <h2>⚡ Pendidikan</h2>
+            <ul class="info-list">
+                <li><strong>2026:</strong> SMA (Candidate)</li>
+                <li><strong>2023:</strong> SMP</li>
+                <li><strong>2018:</strong> SD</li>
+            </ul>
+
+            <h2>⚡ Keahlian Ilahi</h2>
+            <div class="skill-badge">Menguasai Dunia</div>
+            <div class="skill-badge">Microsoft Word</div>
+            <div class="skill-badge">Spreadsheet</div>
+            <div class="skill-badge">Gaming Professional</div>
+            <div class="skill-badge">Futsal (Ekskul)</div>
         </div>
-        <div class="experience-item">
-            <strong>Titan Slayer - Battle for Freedom</strong>
-            <div>Era Titanomakhia</div>
-            <p>Memodernisasi sistem persenjataan langit menggunakan teknologi Thunderbolt 1.0.</p>
+
+        <div class="col">
+            <h2>⚡ Kontak & Sosmed</h2>
+            <ul class="info-list">
+                <li>📞 083845995636</li>
+                <li>FB: <a href="#" class="social-link">Mhmddrahaaa</a></li>
+                <li>IG: <a href="#" class="social-link">Mhmddrahaaa</a></li>
+                <li>TT: <a href="#" class="social-link">Mhmddrahaaa</a></li>
+            </ul>
+
+            <h2>⚡ Bahasa</h2>
+            <p>Jepang, Inggris, Indonesia, Sunda, Mandarin, Spanyol</p>
+
+            <h2>⚡ Prestasi</h2>
+            <p>🏆 <strong>Juara Dunia 2017</strong></p>
         </div>
     </div>
 
-    <div class="section">
-        <h2>⚡ Olympian Skills</h2>
-        <div class="skills-container">
-            <span class="skill-tag">Lightning Strike</span>
-            <span class="skill-tag">Storm Management</span>
-            <span class="skill-tag">Divine Strategy</span>
-            <span class="skill-tag">Immortality</span>
-            <span class="skill-tag">Eagle Eye View</span>
-        </div>
+    <div style="text-align: center; margin-top: 40px; opacity: 0.6; font-size: 0.8em;">
+        Dibuat dengan Kekuatan Petir & Keberuntungan Gacha Tinggi
     </div>
-
-    <footer>
-        &copy; 2024 Dibuat dengan kekuatan Gunung Olympus
-    </footer>
 </div>
 
 </body>
