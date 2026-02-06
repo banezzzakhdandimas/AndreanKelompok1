@@ -3,119 +3,182 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Curriculum Vitae - [Nama Kamu]</title>
+    <title>CV Zeus Olympian - Thunder Edition</title>
     <style>
+        :root {
+            --zeus-gold: #ffd700;
+            --zeus-blue: #1a2a6c;
+            --zeus-dark: #0f0c29;
+            --white: #ffffff;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+            color: var(--white);
             margin: 0;
-            padding: 0;
-            background-color: #f4f4f9;
-            color: #333;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
         }
-        .container {
-            max-width: 800px;
-            margin: 30px auto;
-            background: #fff;
+
+        .cv-card {
+            max-width: 850px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 2px solid var(--zeus-gold);
+            border-radius: 15px;
             padding: 40px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
+
+        /* Efek Ornamen Petir */
+        .cv-card::before {
+            content: "⚡";
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 3rem;
+            opacity: 0.3;
+            color: var(--zeus-gold);
+        }
+
         header {
             text-align: center;
-            border-bottom: 2px solid #3498db;
+            border-bottom: 1px solid var(--zeus-gold);
             padding-bottom: 20px;
-            margin-bottom: 20px;
         }
-        h1 { margin: 0; color: #2c3e50; }
-        .contact-info { font-size: 0.9em; color: #7f8c8d; }
-        h2 {
-            color: #3498db;
-            border-left: 5px solid #3498db;
-            padding-left: 10px;
-            margin-top: 30px;
+
+        /* Styling Foto */
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid var(--zeus-gold);
+            object-fit: cover;
+            margin-bottom: 15px;
+            box-shadow: 0 0 15px var(--zeus-gold);
+        }
+
+        h1 {
+            color: var(--zeus-gold);
             text-transform: uppercase;
-            font-size: 1.2em;
+            letter-spacing: 4px;
+            margin: 10px 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        .section { margin-bottom: 20px; }
-        .item { margin-bottom: 15px; }
-        .item-title { font-weight: bold; display: block; }
-        .item-meta { font-style: italic; color: #7f8c8d; font-size: 0.9em; }
-        ul { padding-left: 20px; }
-        .skills-list {
-            display: flex;
-            flex-wrap: wrap;
-            list-style: none;
-            padding: 0;
-        }
-        .skills-list li {
-            background: #e1f5fe;
-            color: #0277bd;
-            padding: 5px 15px;
-            margin: 5px;
-            border-radius: 20px;
+
+        .contact {
             font-size: 0.9em;
+            color: #ddd;
+        }
+
+        h2 {
+            color: var(--zeus-gold);
+            border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+            padding-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section { margin: 25px 0; }
+
+        .experience-item {
+            margin-bottom: 20px;
+            padding-left: 15px;
+            border-left: 2px solid var(--zeus-gold);
+        }
+
+        .job-title {
+            font-weight: bold;
+            color: var(--zeus-gold);
+            display: block;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            gap: 10px;
+        }
+
+        .skill-tag {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid var(--zeus-gold);
+            padding: 5px 10px;
+            border-radius: 5px;
+            text-align: center;
+            font-size: 0.85em;
+            transition: 0.3s;
+        }
+
+        .skill-tag:hover {
+            background: var(--zeus-gold);
+            color: var(--zeus-dark);
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.8em;
+            margin-top: 40px;
+            color: var(--zeus-gold);
         }
     </style>
 </head>
 <body>
 
-<div class="container">
+<div class="cv-card">
     <header>
-        <h1>NAMA LENGKAP KAMU</h1>
-        <div class="contact-info">
-            Kota, Provinsi | 0812-3456-7890 | email@domain.com
-            <br>
-            LinkedIn: linkedin.com/in/username | Portfolio: websitekamu.com
+        <img src="https://via.placeholder.com/150" alt="Profile Photo" class="profile-img">
+        <h1>ZEUS OLYMPIAN</h1>
+        <div class="contact">
+            Mount Olympus, Greece | ⚡ lightning-bolt@olympus.com | +62 812-345-678
         </div>
     </header>
 
     <div class="section">
-        <h2>Profil Profesional</h2>
-        <p>Saya adalah seorang [Jabatan/Keahlian] yang berdedikasi dengan pengalaman selama [X] tahun dalam industri [Nama Industri]. Memiliki keahlian kuat dalam [Sebutkan 1-2 skill utama] dan berkomitmen untuk memberikan hasil kerja yang berkualitas tinggi.</p>
+        <h2>⚡ Ringkasan Profil</h2>
+        <p>Pemimpin tertinggi para dewa dengan keahlian dalam manajemen petir, arsitektur awan (Cloud Computing), dan kepemimpinan strategis selama ribuan tahun. Berpengalaman dalam menjaga stabilitas ekosistem Olympus.</p>
     </div>
 
     <div class="section">
-        <h2>Pengalaman Kerja</h2>
-        <div class="item">
-            <span class="item-title">Senior Web Developer - PT. Teknologi Maju</span>
-            <span class="item-meta">Januari 2021 - Sekarang</span>
+        <h2>⚡ Pengalaman Kerja</h2>
+        <div class="experience-item">
+            <span class="job-title">King of Gods - Mount Olympus HQ</span>
+            <small>Era Mitologi - Sekarang</small>
             <ul>
-                <li>Mengembangkan arsitektur frontend menggunakan React.js.</li>
-                <li>Meningkatkan kecepatan loading website sebesar 40%.</li>
-                <li>Memimpin tim yang terdiri dari 5 pengembang junior.</li>
+                <li>Mengelola infrastruktur langit dan bumi secara real-time.</li>
+                <li>Menyelesaikan konflik antar departemen (Dewa-Dewi) dengan diplomasi petir.</li>
+                <li>Optimalisasi sistem keamanan terhadap serangan Titan.</li>
             </ul>
         </div>
 
-        <div class="item">
-            <span class="item-title">Junior Developer - Startup Kreatif</span>
-            <span class="item-meta">Juni 2018 - Desember 2020</span>
+        <div class="experience-item">
+            <span class="job-title">Senior Lightning Architect - Sky Division</span>
+            <small>Era Pra-Sejarah</small>
             <ul>
-                <li>Membangun interface pengguna menggunakan HTML, CSS, dan JavaScript.</li>
-                <li>Bekerja sama dengan tim UI/UX untuk implementasi desain.</li>
+                <li>Merancang sistem distribusi energi listrik alami pertama di dunia.</li>
             </ul>
         </div>
     </div>
 
     <div class="section">
-        <h2>Pendidikan</h2>
-        <div class="item">
-            <span class="item-title">S1 Teknik Informatika - Universitas Indonesia</span>
-            <span class="item-meta">2014 - 2018 | IPK: 3.8/4.0</span>
+        <h2>⚡ Keahlian Ilahi</h2>
+        <div class="skills-container">
+            <div class="skill-tag">Thunder Control</div>
+            <div class="skill-tag">Cloud Architecture</div>
+            <div class="skill-tag">Strategic Leadership</div>
+            <div class="skill-tag">Public Speaking</div>
+            <div class="skill-tag">Crisis Management</div>
+            <div class="skill-tag">Eternal Wisdom</div>
         </div>
     </div>
 
-    <div class="section">
-        <h2>Keahlian</h2>
-        <ul class="skills-list">
-            <li>HTML5 & CSS3</li>
-            <li>JavaScript</li>
-            <li>React.js</li>
-            <li>Git & GitHub</li>
-            <li>Problem Solving</li>
-            <li>Manajemen Proyek</li>
-        </ul>
-    </div>
+    <footer>
+        &copy; 2024 Zeus Olympian - Dicetak dengan kekuatan petir
+    </footer>
 </div>
 
 </body>
